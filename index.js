@@ -3,6 +3,11 @@ const express = require('express');
 const app=express();
 const port=4200;
 
+
+// set up the view engine
+app.use('view engine','ejs');
+app.set('views','./Views');
+
 /* Mount Router Middleware: Uses app.use() to mount the router middleware defined in the ./routes/index.js file. 
 This means that any requests received by the server will be passed through the routes defined in the index.js router module. */
 
