@@ -3,6 +3,11 @@ const express = require('express');
 const app=express();
 const port=4200;
 const path=require('path');
+const expressLayouts= require('express-ejs-layouts');
+
+
+// using expressLayouts before the routes
+app.use(expressLayouts);
 
 
 // set up the view engine

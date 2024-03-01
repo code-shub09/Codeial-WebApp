@@ -1,0 +1,22 @@
+<!-- Note: by default we have to give name to our html file as layout.ejs else it will give error -->
+
+<!-- you can also change it by setting up custom layout ----app.set('layout', 'custom-layout'); -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('_header') %>
+    
+    <%- body %>
+
+    <%- include('_footer') %>
+    
+</body>
+</html>
