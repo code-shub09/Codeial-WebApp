@@ -1,6 +1,15 @@
 const express = require('express');
-
 const app=express();
+
+const cookieParser=require('cookie-parser');
+
+app.use(express.urlencoded());
+
+app.use(cookieParser());
+
+const db=require('./config/mongoose');
+
+
 const port=4200;
 const path=require('path');
 
