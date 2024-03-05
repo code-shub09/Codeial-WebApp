@@ -13,7 +13,7 @@ module.exports.home=function(req,res){
     //sending sessionID stored in cookies to the browser 
     res.cookie('user_sessionID',25);
 
-
+    
     return res.render('home',{
         title:'Home'
     });

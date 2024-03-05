@@ -3,17 +3,18 @@ const mongoose=require('mongoose');
 /* First, you define a schema that defines the structure of your documents. You can define this schema using the mongoose.Schema() constructor.*/
 
 const userSchema= new mongoose.Schema({
+    
+    password:{
+        type:String,
+        required:true,
+
+    },
     email:{
         type:String,
         required:true,
         unique:true
     },
-    password:{
-        type:String,
-        required:true,
-
-    }
-    ,
+    
     name:{
         type:String,
         required:true,

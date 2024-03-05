@@ -6,19 +6,29 @@ const user =require('../Models/user');
 
 module.exports.profile=function(req,res){
     // res.send('<h1>user profile </h1>');
+    console.log('hello');
     res.render('profile',{
-        title:'User Profile'
+        title:'User Profile',
+        user:req.user
+
     });
 
 }
 
 module.exports.SignUp=function(req,res){
+    if(req.isAuthenticated()){
+        return  res.redirect('/user/profile');
+    }
     res.render('user_signUp',{
         title:'Codeial| SignUp'
     })
 }
 
 module.exports.SignIn=function(req,res){
+    // we can use this also but i have used middleware at route 
+    // if(req.isAuthenticated()){
+    //     return  res.redirect('/user/profile');
+    // }
     res.render('user_signIn',{
         title:'Codeial | SignIn'
     })
@@ -62,4 +72,20 @@ module.exports.Create=function(req,res){
 // sign in and create the session for the user
 module.exports.session=function(req,res){
     //todo later
+    console.log('4');
+    console.log('profile');
+    return res.redirect('/user/profile');
+}
+
+
+
+
+module.exports.signOut=function(req,res){
+    // https://www.passportjs.org/concepts/authentication/logout/
+    // .logout() is part of passport
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
+   
 }
