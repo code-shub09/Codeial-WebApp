@@ -23,6 +23,10 @@ router.post('/create-session',passport.authenticate(
 
 router.get('/sign-out',userController.signOut);
 
+// router.post('/create',userController.posT);
+
+
+
 
 module.exports=router;
 
