@@ -1,0 +1,41 @@
+#container-flex {
+    display: flex;
+    width: 100%;
+
+    background-color: rgba(124, 224, 231, 0.921);
+    color: white;
+    font-weight: bolder;
+    height: 10vh;
+
+    .F_user {
+        width: 50%;
+        font-size: 2em;
+
+        
+            p{ 
+                text-align: end;
+                margin-top: 0px;
+                font-weight:300;
+
+                a{
+                    font-size: x-large;
+                    margin-left: 10px;
+                    color: white;
+                    text-decoration-line: none;
+                }
+                span{
+                    text-transform:capitalize;
+                    font-size: x-large;
+                }
+            }
+        
+    }
+
+
+
+
+
+
+
+
+}

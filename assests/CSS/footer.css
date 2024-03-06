@@ -1,0 +1,26 @@
+body .container {
+  background-color: gray;
+  display: flex;
+  height: 9vh;
+  color: white;
+}
+
+body .container div {
+  width: 30%;
+  font-size: 1.2em;
+}
+
+body .container div p {
+  margin-top: 6px;
+  margin-bottom: 0px;
+  font-size: 0.8em;
+}
+
+body .container div p a {
+  color: white !important;
+  text-decoration-line: none;
+}
+
+body .container #companyName {
+  margin-top: 10px;
+}

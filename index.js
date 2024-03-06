@@ -12,6 +12,21 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const sassMiddelware= require('node-sass-middleware');
+
+// saasmiddelware must be used before server is starting 
+
+
+// link:https://github.com/sass/node-sass-middleware
+app.use(sassMiddelware({
+    src:'./assests/SCSS',
+    dest:'./assests/CSS',
+    // debug true ka matlab ki hum error show karna chahte ,false tab rakhenge jab production pe hoga
+    debug:true,
+    // outputStyle ka matlab code single line mai ya multiplelines mai ,expanded for multiple lines
+    outputStyle:'expanded',
+    prefix:'/CSS'
+}))
 
 const port = 4200;
 const path = require('path');

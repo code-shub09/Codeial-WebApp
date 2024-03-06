@@ -1,0 +1,25 @@
+body{
+    .container{
+        background-color: gray;
+        display: flex;
+        height: 9vh;
+        color: white;
+        div{
+            width: 30%;
+            font-size: 1.2em;
+            p{
+                margin-top: 6px;
+                margin-bottom: 0px;
+              font-size: 0.8em;
+              a{
+                color: white !important;
+                text-decoration-line: none;
+              }
+            }
+        }
+        #companyName{
+            margin-top: 10px;
+
+        }
+    }
+}
