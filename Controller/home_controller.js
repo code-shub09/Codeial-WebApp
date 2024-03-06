@@ -1,3 +1,5 @@
+const post =require('../Models/post');
+const { rawListeners } = require('../Models/user');
 module.exports.home=function(req,res){
     // return res.send('<h1>Express is up for codeial</h1>')
     
@@ -15,6 +17,7 @@ module.exports.home=function(req,res){
 
     
     return res.render('home',{
-        title:'Home'
+        title:'Home',
+        post:req.post
     });
 }

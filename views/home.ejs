@@ -4,6 +4,12 @@
 <h1>Codeial /<%= title %></h1>
 
 
+
+<% post.forEach(function(post) { %>
+    <div><%= post.content %></div><!-- Display the content of each post -->
+<% }); %>
+
+
 <section>
     <h4>Posts</h4>
     <form action="/post/create" method="post">
