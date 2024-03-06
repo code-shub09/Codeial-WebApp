@@ -17,6 +17,7 @@ const sassMiddelware= require('node-sass-middleware');
 // saasmiddelware must be used before server is starting 
 
 
+
 // link:https://github.com/sass/node-sass-middleware
 app.use(sassMiddelware({
     src:'./assests/SCSS',
@@ -83,7 +84,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
+app.use(passport.setAuthenticatedUser);
 
 /* Mount Router Middleware: Uses app.use() to mount the router middleware defined in the ./routes/index.js file. 
 This means that any requests received by the server will be passed through the routes defined in the index.js router module. */
