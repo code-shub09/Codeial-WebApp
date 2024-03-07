@@ -100,7 +100,7 @@ passport.setAuthenticatedUser=function(req,res,next){
   //  user: An object containing the authenticated user (if authentication middleware is used).
   // req.user ke andar current sign in user data hota h
     res.locals.user=req.user;
-    res.locals.post=req.post;
+   
   }
   next();
 }

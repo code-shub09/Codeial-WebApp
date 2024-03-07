@@ -1,23 +1,35 @@
-
-
 <link rel="stylesheet" href="/CSS/user_home.css">
-<h1>Codeial /<%= title %></h1>
+<h1>Codeial /<%= title %>
+</h1>
 
 
-
-<% post.forEach(function(post) { %>
-    <div><%= post.content %></div><!-- Display the content of each post -->
-<% }); %>
+<h4>Posts</h4>
 
 
-<section>
-    <h4>Posts</h4>
-    <form action="/post/create" method="post">
-        <textarea name="content"  cols="30" rows="10"></textarea>
-       <input type="submit" value="Post">
-    </form>
-</section>
+    <% if(locals.user){ %>
+        <% post.forEach(function(post) { %>
+        <div class="container-post">
+            <div class="user-Post">
+                <%= post.content %>
+            </div>
+            <div class="comment-list">
 
+            </div>
+            <div class="comment">
+                
+                <form action="/post/create-comment" method="post">
+                    <textarea name="comment" placeholder="write a comment" ></textarea>
+                    <input type="hidden" name="post" value="<%=post._id.toString().trim()%>">
+                    <input type="submit" value="Add comment">
+                </form>
+            </div><!-- Display the content of each post -->
+      </div>
+         <% }); %>
+    <section class="new-post">
 
-
-
+        <form action="/post/create" method="post">
+            <textarea name="content" cols="30" rows="10"></textarea>
+            <input type="submit" value="Post">
+        </form>
+    </section>
+    <%} %>

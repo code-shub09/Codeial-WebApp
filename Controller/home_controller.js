@@ -14,10 +14,24 @@ module.exports.home=function(req,res){
 
     //sending sessionID stored in cookies to the browser 
     res.cookie('user_sessionID',25);
+    if(req.isAuthenticated()){
+        post.find({}).then((allPost)=>{
+            return res.render('home',{
+               title:'Home',
+               post:allPost
+           })
+           
+       })
+
+    }
+    else{
+        return res.render('home',{
+            title:'Home'
+        })
+        
+
+    }
 
     
-    return res.render('home',{
-        title:'Home',
-        post:req.post
-    });
+    
 }

@@ -15,9 +15,9 @@ const express =require('express');
 const router=express.Router();
 const passport=require('passport')
 
-const handlerFun=require('../Controller/pos_t_controller').posT;
-router.post('/create',handlerFun);
-
+const handlerFun=require('../Controller/pos_t_controller');
+router.post('/create',handlerFun.posT);
+router.post('/create-comment',handlerFun.comment)
 // router.post('/create',handlerFun);
 
 module.exports=router;
